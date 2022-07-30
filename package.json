@@ -1,5 +1,5 @@
 {
-  "name": "back",
+  "name": "Server Template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,8 +16,6 @@
     "jest": "^28.1.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.18",
-    "pg": "^8.7.3",
-    "sequelize": "^6.21.2",
-    "sequelize-cli": "^6.4.1"
+    "pg": "^8.7.3"
   }
 }
