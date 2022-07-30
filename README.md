@@ -1,4 +1,4 @@
-# Server
+# Server Template
 Express Router with raw Postgresql queries
 
 TODO:
