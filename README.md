@@ -3,7 +3,6 @@ Express Router with raw Postgresql queries
 
 <b>TODO:</b> <br/>
 	- Create shell script to seed table automatically <br/>
-	- Use body-parser properly for handling requests <br/>
 	- Create tests and logging <br/>
 	- Research how to use blobs (large objects) in postgresql <br/>
  	- Research proper cors implementation for production <br/>
@@ -19,6 +18,30 @@ I'm a huge fan of cli, i'd recommend setting up alias' they will save you time.
 
 write the following in .bashrc (you'll need to exit and ssh back into the server): <br/>
 alias psql='psql -U postgres -d postgres'
+
+<b>Change password for postgres user:</b><br/>
+	Allow password-less login <br/>
+		sudo vi /etc/postgresql/14/main/pg_hba.conf<br/>
+			Change this line to end in 'trust' instead of 'md5'<br/>
+			# Database administrative login by Unix domain socket<br/>
+			local   all             postgres                  md5<br/>
+	Restart psql service:<br/>
+		sudo systemctl stop postgresql.service<br/>
+		sudo systemctl start postgresql.service<br/>
+	Log into psql:<br/>
+		psql -U postgres -d postgres<br/>
+			within psql run the following and enter password 'password':<br/>
+			/password postgres<br/>
+	Configure password-only log in:<br/>
+	    sudo vi /etc/postgresql/14/main/pg_hba.conf<br/>
+    	    Change this line to end in 'md5' instead of 'trust'<br/>
+       		# Database administrative login by Unix domain socket<br/>
+        	local   all             postgres              md5<br/>
+    Restart psql service:<br/>
+        sudo systemctl stop postgresql.service<br/>
+        sudo systemctl start postgresql.service<br/>
+
+	
 
 <b>Create the tables:</b> <br/>
 	psql -U postgres -d postgres -c "\i ./create_tables.sql"

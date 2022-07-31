@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const Pool = require('pg').Pool;
 const cors = require('cors');
 
@@ -18,7 +19,9 @@ const port = 3001;
 
 const app = express();
 
-app.use(express.json());
+//parse the bodies of all incoming requests as json 
+app.use(bodyParser.json());
+
 app.use(cors({origin: '*'}));
 
 //routes
