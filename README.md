@@ -2,14 +2,18 @@
 Express Router with raw Postgresql queries
 
 <b>TODO:</b> <br/>
-	- Create shell script to seed table automatically <br/>
-	- Create tests and logging <br/>
-	- Research how to use blobs (large objects) in postgresql <br/>
- 	- Research proper cors implementation for production <br/>
+	<ul>
+	<li>Create shell script to seed table automatically</li>
+	<li>Create tests - found nice tutorial https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6</li>
+	<li>Create logging with Morgan</li>
+	<li>Research how to use blobs (large objects) in postgresql</li>
+ 	<li>Research proper cors implementation for production</li>
+	</ul>
 
-<b>May be a problem:</b> <br/>
-	- The timestamp when creating the tables should work, need to test and verify later.
-
+	<ul>
+	<b>May be a problem:</b>
+	<li>The timestamp when creating the tables should work, need to test and verify later.</li>
+	</ul>
 
 
 
